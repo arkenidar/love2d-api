@@ -20,6 +20,8 @@ function update()
   end
 end
 
+require "outset" -- "rectangle_outset" code from: https://github.com/arkenidar/circles-lua
+
 function draw()
   set_color(color.red)
   circle(circle1)
@@ -31,11 +33,11 @@ function draw()
   local color1 = is_mouse_inside1 and color.yellow or color.green
 
   set_color(color1)
-  rectangle(rectangle1_xywh)
+  rectangle_outset(rectangle1_xywh)
 
   local is_intersecting_r1_r2 = rectangle_xywh_intersect_boolean(rectangle1_xywh, rectangle2_xywh)
-  local color2 = is_intersecting_r1_r2 and color.grey or color.white
+  local color2 = is_intersecting_r1_r2 and color.blue or color.brown
 
   set_color(color2)
-  rectangle(rectangle2_xywh)
+  rectangle_outset(rectangle2_xywh)
 end
