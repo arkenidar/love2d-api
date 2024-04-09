@@ -15,7 +15,7 @@ end
 local circle1 = { x = 100, y = 50, radius = 30 }
 
 function update()
-  if mouse.down then
+  if mouse.click then -- .down or .click
     circle1.x, circle1.y = mouse.x, mouse.y
   end
 end
